@@ -10,11 +10,19 @@
     */
 
     //ENTRADA
-
-
+const valorImovel = Number(prompt('qual o valor do imóvel ?'));
+const anos = Number(prompt('Em quantos anos será realizado o fianciamento ?'));
+const salario = Number(prompt('qual seu salário'));
+let mensagem = "" ;
     //PROCESSAMENTO
+const parcelas =  valorImovel / (anos * 12);
+const limite = salario * 0.30 ;
 
-    
+if (parcelas <= limite) {
+    mensagem = (`seu finaciamento foi APROVADO ! o valor das parcelas por mês vai ser de R$ ${ (parcelas).toFixed(2)}.`);
+} else {
+    mensagem = (`seu finaciamento foi NEGADO ! O valor das parcelas por mês exedeu 30% do seu salario.`)
+}
     //SAÍDA
-
+alert(mensagem);
 </script>

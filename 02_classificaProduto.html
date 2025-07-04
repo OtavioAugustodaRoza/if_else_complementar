@@ -13,11 +13,26 @@
     */
 
     //ENTRADA
-
-
+const codigo = Number(prompt('digite o código do produto! exemplo:1, 2, 3 ...'));
+let mensagem = "" ;
     //PROCESSAMENTO
-
+if (codigo === 1) {
+    mensagem = "Alimento não-perecível";
+} else if (codigo > 1 && codigo < 5) {
+    mensagem = " Alimento perecível";
+} else if (codigo === 5 || codigo === 6) {
+    mensagem = "Vestuário";
+} else if (codigo === 7) {
+    mensagem = "Higiene Pessoal"
+} else if (codigo > 7 && codigo < 16) {
+    mensagem = "Limpeza e Utensílios Domésticos";
+} else if (codigo > 15 && codigo <= 20) {
+    mensagem = "Outros"
+} else {
+    mensagem = "Código inválido";
+}
     
     //SAÍDA
+alert(mensagem);
 
 </script>

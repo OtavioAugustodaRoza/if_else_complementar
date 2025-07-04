@@ -15,11 +15,20 @@
     */
 
     //ENTRADA
-
+const salario = Number(prompt('qual seu salário atual ? '));
+let mensagem = "" ; 
 
     //PROCESSAMENTO
-
+if (salario <= 2000) {
+    mensagem = (`seu novo salário é R$ ${salario * 1.15}`);
+} else if (salario > 2000 && salario <= 4000) {
+    mensagem = (`seu novo salário é R$ ${salario * 1.10}`);
+} else if (salario > 4000) {
+     mensagem = (`seu novo salário é R$ ${salario * 1.075}`);
+} else {
+     mensagem = (`seu novo salário é R$ ${salario * 1.05}`);
+}
     
     //SAÍDA
-
+alert(mensagem);
 </script>

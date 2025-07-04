@@ -11,11 +11,21 @@
     */
 
     //ENTRADA
-
-
+const distancia = Number(prompt('qual a distância em km da viagem ? '));
+const kmPorDia = Number(prompt('quantos km deseja viajar por dia ? '));
+let mensagem = "";
     //PROCESSAMENTO
+const quantosDias = (distancia / kmPorDia).toFixed(0) ; 
 
-    
+if (quantosDias <= 3) {
+    mensagem = "Qualquer Período";
+} else if (quantosDias > 3 && quantosDias <= 10) {
+    mensagem = "Férias de Julho";
+} else if (quantosDias > 10 && quantosDias <= 20) {
+    mensagem = "Férias de Verão";
+} else {
+    mensagem = (` Deverá Trabalhar Remoto pois a viagem via demorar ${quantosDias}`);
+}
     //SAÍDA
-
+alert(mensagem);
 </script>

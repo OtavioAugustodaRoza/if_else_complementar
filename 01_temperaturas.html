@@ -10,11 +10,22 @@
     */
 
     //ENTRADA
-
+const temperatura = Number(prompt('informe uma temperatura em graus celsius: '));
+let mensagem = "" ;
 
     //PROCESSAMENTO
-
+if (temperatura < 100) {
+    mensagem = "Está muito baixa!";
+} else if (temperatura <= 200 ) {
+    mensagem = "Está baixa!";
+} else if (temperatura > 200 && temperatura < 500) {
+    mensagem = "Está normal!";
+} else {
+    mensagem = "Está muito alta!";
+}
     
     //SAÍDA
+alert(mensagem);
 
+// 100 graus neva em joinville kkkkkkkkkkkkk
 </script>
