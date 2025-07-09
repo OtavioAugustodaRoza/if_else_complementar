@@ -19,11 +19,21 @@
     */
 
     //ENTRADA
-
-
+const anosDeCarreira = Number(prompt('quantos anos de carreira você tem? '));
+const ProjetosDePes = Number(prompt('quantos projetos de pesquisa já coordenou?'));
+const projetosdeEx = Number(prompt('quantos projetos de extensão você já orientou?'));
+const quantidadeTcc = Number(prompt('qual a quantidade de TCCs qu você já orientou?'));
+let mensagem = "";
     //PROCESSAMENTO
+const pontuação = (2.5 * anosDeCarreira) + (5 * ProjetosDePes) + (projetosdeEx * 5) + (quantidadeTcc * 3);
 
-    
+if (pontuação <= 30) {
+    mensagem = (`Sua pontuação é de ${pontuação} e sua classificação é CONVIDADO.`);
+} else if (pontuação > 30 && pontuação <= 50) {
+    mensagem = (`Sua pontuação é de ${pontuação} e sua classificação é AGREGADO.`);
+} else {
+   mensagem = (`Sua pontuação é de ${pontuação} e sua classificação é TITULAR.`);
+}
     //SAÍDA
-
+alert(mensagem);
 </script>

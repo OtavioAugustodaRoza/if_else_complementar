@@ -2,7 +2,7 @@
 <script>
     /*
     PROBLEMA: CALCULAR DESCONTO NA COMPRA DE UM COMPUTADOR
-    Peça para o vendedor informar o valor do computador que está vendendo e também informar a forma de pagamento que o Cliente procederá para a comopra do equipamento.
+    Peça para o vendedor informar o valor do computador que está vendendo e também informar a forma de pagamento que o Cliente procederá para a compra do equipamento.
 
     - Se for via (B)Boleto, o cliente terá 3% (3/100) de desconto.
     - Se for via (D)Dinheiro, o cliente terá 5% (5/100) de desconto.
@@ -12,11 +12,20 @@
     */
 
     //ENTRADA
-
-
+const valorCom = Number(prompt('qual o valor do computador?'));
+const foramPag = Number(prompt('qual será a forma de pagamento? (B)Boleto, (D)Dinheiro, (P)PIX'));
+let mensagem = "";
     //PROCESSAMENTO
-
+if (foramPag === "B") {
+    mensagem = (`O preço final do computador é de ${valorCom - (valorCom * 0.03)} `);
+} else if (foramPag === "D") {
+    mensagem = (`O preço final do computador é de ${valorCom - (valorCom * 0.05)} `);
+} else if (foramPag === "P") {
+    mensagem = (`O preço final do computador é de ${valorCom - (valorCom * 0.10)} `);
+} else {
+    mensagem = "Você digitou uma forma de pagamento INVÁLIDA!";
+}
     
     //SAÍDA
-
+alert(mensagem);
 </script>
