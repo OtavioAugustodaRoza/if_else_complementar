@@ -15,11 +15,26 @@
     */
 
     //ENTRADA
-    
-
+const viagens = Number(prompt('quantas viagens foram realizadas por dia ?'));
+const cargo = prompt('qual cargo você ocupa ? exemplo : Motorista e Cobrador, escreva exatamente como foi mostrado .');
+let valor = 100 * viagens ;
+let mensagem = "" ; 
     //PROCESSAMENTO
-
+if (cargo === "Motorista" && viagens <= 10 ) { 
+    valor = valor * 1.20;
+    mensagem = (`Seu cargo é ${cargo} e o valor final recebido é de R$ ${valor.toFixed(2)}`);
+} else if (cargo === "Motorista" && viagens > 10) {
+    valor = valor * 1.30 ; 
+    mensagem = (`Seu cargo é ${cargo} e o valor final recebido é de R$ ${valor.toFixed(2)}`);
+} else if (cargo === "Cobrador" && viagens <= 10) {
+    mensagem = (`Seu cargo é ${cargo} e o valor final recebido é de R$ ${valor.toFixed(2)}`);
+} else if (cargo === "Cobrador" && viagens > 10) {
+    valor = valor * 1.10;
+    mensagem = (`Seu cargo é ${cargo} e o valor final recebido é de R$ ${valor.toFixed(2)}`);
+} else {
+    mensagem = "OPS ... parece que você digitou seu cargo de maneira INCORRETA" ;
+}
     
     //SAÍDA
-
+alert(mensagem);
 </script>
