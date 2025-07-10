@@ -23,8 +23,10 @@ const custoSp = precoHotelSp + precoTranSp ;
 const custoRj = precoHotelRj + precoTranRj ; 
 
 if(custoRj>custoSp) {
-    
+    mensagem = (`O melhor destino é São Paulo, o custo da viagem será de R$ ${custoSp}`);
+} else {
+    mensagem = (`O melhor destino é Rio de Janeiro, o custo da viagem será de R$ ${custoRj}`);
 }
     //SAÍDA
-
+alert(mensagem);
 </script>
