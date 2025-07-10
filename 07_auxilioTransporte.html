@@ -12,11 +12,28 @@
     */
 
     //ENTRADA
-
-
+let salario = Number(prompt('Quantos você recebe por mês?'));
+const querTransporte = prompt('você gostaria de receber auxílio transporte ? Responda apenas com sim ou nao!');
+const usaVeiculo = prompt('você utiliza veículo próprio para se locomover ao trabalho? Responda com sim ou nao! ');
+let mensagem = "";
     //PROCESSAMENTO
-
+if (querTransporte === "sim" || usaVeiculo === "sim" ) {
+    const desconto = salario * 0.06;
+    salario = salario - desconto;
+    if (querTransporte === "sim" && usaVeiculo === "sim") {
+        salario += 350;
+        mensagem = (`Seu salário final é de R$ ${salario} e o desconto dele foi de R$ ${desconto} `);
+    } else if (usaVeiculo === "sim" ) {
+        salario += 200;
+        mensagem = (`Seu salário final é de R$ ${salario} e o desconto dele foi de R$ ${desconto}. `);
+    } else {
+        salario += 150;
+        mensagem = (`Seu salário final é de R$ ${salario} e o desconto dele foi de R$ ${desconto} `);
+    }
+} else {
+    mensagem = (`seu salario permaneceu o mesmo de R$ ${salario}`);
+}
     
     //SAÍDA
-
+alert(mensagem);
 </script>
